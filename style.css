@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    padding: 15px;
+    background-color: #9ea0a4;
+    min-height: 100vh;
+}
+
+.container .form-section h2 {
+    color: #2387bc;
+    font-size: 2em;
+}
+
+
+.container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+    
+    body {
+        padding: 20px;
+    }
+}
+
+.form-section, .preview-section {
+    flex: 1;
+    background: #c7d9dc;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .form-section, .preview-section {
+        padding: 20px;
+        max-width: 50%;
+    }
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    label {
+        font-size: 16px;
+    }
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    button {
+        width: auto;
+        font-size: 16px;
+        
+    }
+}
+
+.preview-section h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+@media (min-width: 768px) {
+    .preview-section h1 {
+        font-size: 28px;
+    }
+}
+
+.preview-section h2 {
+    color: #34495e;
+    margin: 15px 0 10px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+
+.profile-pic-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+@media (min-width: 768px) {
+    .profile-pic-container {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.profile-pic-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.profile-pic-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (min-width: 768px) {
+    .profile-pic-placeholder {
+        font-size: 14px;
+    }
+}
+
+.resume-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .resume-header {
+        flex-direction: row;
+        text-align: left;
+        gap: 20px;
+    }
+}
+
+.resume-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header-text {
+    flex: 1;
+}
+
+#imageInput {
+    display: none;
+}
+
+.image-upload-btn {
+    background-color: #28a745;
+}
+
+/* Preview section responsive styles */
+.preview-section p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .preview-section p {
+        font-size: 16px;
+    }
+}
+
+.experience h3, .education h3 {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+    .experience h3, .education h3 {
+        font-size: 18px;
+    }
+}
+
+/* Sticky preview section for larger screens */
+@media (min-width: 768px) {
+    .preview-section {
+        position: sticky;
+        top: 20px;
+        max-height: calc(100vh - 40px);
+        overflow-y: auto;
+    }
+}
+
+/* Form section responsive padding */
+@media (max-width: 767px) {
+    .form-group {
+        padding: 0;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        padding: 0;
+        background: white;
+    }
+    
+    .container {
+        display: block;
+    }
+
+    .form-section {
+        display: none;
+        
+    }
+
+    .preview-section {
+        box-shadow: none;
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Loading state */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Success message */
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: none;
+}
